@@ -1,4 +1,4 @@
-![logo](/images/SituationalAwareness.png)
+![logo](SituationalAwareness.png)
 
 # SystemSA
 System Situational Awareness
