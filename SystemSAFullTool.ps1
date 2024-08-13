@@ -429,6 +429,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
     }
     #iterate through the functions checked
     foreach ($item in $global:checkedItems) {
-        Invoke-Command $item
+        &$item
     }
 }
