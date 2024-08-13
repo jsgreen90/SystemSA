@@ -17,7 +17,7 @@ Run the powershell script, it includes the underlying functions as well as the G
 
 This will launch the GUI where you can select the functions you want to run - please note that some of the functions require local admin
 
-![screenshot](GUIScreenshot.png).
+![screenshot](GUIScreenshot.png)
 
 From here you can select any combination of functions by clicking the checkbox or use the select all button.
 
@@ -27,6 +27,6 @@ After you confirm the functions and the output folder, you click run and the fun
 
 Output Example:
 
-![output](Output.png).
+![output](Output.png)
 
 Happy Hunting!
