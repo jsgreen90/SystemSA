@@ -1,3 +1,5 @@
+![logo](/images/SituationalAwareness.png)
+
 # SystemSA
 System Situational Awareness
 
