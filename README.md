@@ -14,3 +14,7 @@ Run the powershell script, it includes the underlying functions as well as the G
 ```
 .\SystemSAFullTool.ps1
 ```
+
+This will launch the GUI where you can select the functions you want to run - please note that some of the functions require local admin
+
+
