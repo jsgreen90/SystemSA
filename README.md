@@ -25,4 +25,8 @@ Then you will need to browse the folder you wish to save your output to. Once yo
 
 After you confirm the functions and the output folder, you click run and the functions you selected will run and save the output to your desired destination in a series of text and csv files.
 
+Output Example:
+
+![output](Output.png).
+
 Happy Hunting!
