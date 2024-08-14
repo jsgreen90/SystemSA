@@ -97,10 +97,14 @@ Function Find-SusFilterDrivers {
     }
     echo "Scanning for suspicious filter drivers. Any found will be compared against existing services:"
     $SuspectDrivers = $($FilterEvents | where-object {$_.FilterDriver -ine "FileInfo" -AND $_.FilterDriver -ine "WdFilter" -AND $_.FilterDriver -ine "storqosflt" -AND $_.FilterDriver -ine "wcifs" -AND $_.FilterDriver -ine "CldFlt" -AND $_.FilterDriver -ine "FileCrypt" -AND $_.FilterDriver -ine "luafv" -AND $_.FilterDriver -ine "npsvctrig" -AND $_.FilterDriver -ine "Wof" -AND $_.FilterDriver -ine "FileInfo" -AND $_.FilterDriver -ine "bindflt" -AND $_.FilterDriver -ine "PROCMON24" -AND $_.FilterDriver -ine "FsDepends"} | select -exp FilterDriver)
-    $SuspectDrivers | Export-Csv -Path ([System.IO.Path]::Combine($SaveFolder,"$pc.suspiciousfilterdrivers.csv")) -NoTypeInformation
+    $FilteredDrivers = @{}
     foreach ($driver in $SuspectDrivers){
-    echo "Checking services for relevant drivers. Any which aren't present may indicate a filter driver which has since been removed, or an active rootkit filtering service registry keys."
-    gci REGISTRY::HKLM\SYSTEM\CurrentControlSet\Services\$driver
+        echo "Checking services for relevant drivers. Any which aren't present may indicate a filter driver which has since been removed, or an active rootkit filtering service registry keys."
+        $a = gci REGISTRY::HKLM\SYSTEM\CurrentControlSet\Services\$driver
+        if ($a -eq $null) {
+            $FilteredDrivers += $driver
+            }
+    $FilteredDrivers | Export-Csv -Path ([System.IO.Path]::Combine($SaveFolder,"$pc.suspiciousfilterdrivers.csv")) -NoTypeInformation
     }
 }
 
