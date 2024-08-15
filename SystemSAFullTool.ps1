@@ -66,7 +66,7 @@ function Get-Connections{
                                       @{N='State';E={$Matches['State']}},
                                       @{N='PID';E={$Matches['PID']}},
                                       @{N='ProcessName';E={[System.Diagnostics.Process]::GetProcessById([int]$Matches['PID']).ProcessName};},
-                                      @{N='ProcessBornDate';E={([System.Diagnostics.Process]::GetProcessById([int]$Matches['PID']).StartTime)};}
+                                      @{N='ProcessStartTime';E={([System.Diagnostics.Process]::GetProcessById([int]$Matches['PID']).StartTime)};}
         }
 
     }
