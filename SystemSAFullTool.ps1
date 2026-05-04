@@ -1,4 +1,4 @@
-﻿#Create all the functions to be used for information gathering
+#Create all the functions to be used for information gathering
 function Get-Startup {
    $a = Get-WmiObject -Class win32_startupcommand | select Location,Caption,Command
    $a | Export-Csv -Path ([System.IO.Path]::Combine($SaveFolder,"$pc.Startup.csv")) -NoTypeInformation 
